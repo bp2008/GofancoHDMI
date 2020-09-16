@@ -1,6 +1,8 @@
 # GofancoHDMI
 A simple Windows Service with an embedded web server that assists in controlling a Gofanco PRO-Matrix44-SC (4x4 HDMI matrix) over HTTP.
 
+[PRO-Matrix44-SC](https://i.imgur.com/c8fEyQs.jpg)
+
 ## Purpose
 
 The [Gofanco PRO-Matrix44-SC](http://amzn.com/B07P765D45) has a rudimentary web interface allowing device control over TCP/IP.  However, all useful requests require the use of HTTP POST, and to complicate matters, the device does not implement the HTTP protocol correctly when it sends responses.  This service application aims to offer control of the HDMI matrix using standard HTTP GET requests.
