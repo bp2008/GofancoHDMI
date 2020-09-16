@@ -25,3 +25,7 @@ The official "Matrix Manager" application can do most of these things via IP, if
 * Cloud settings
 * Reading software/firmware versions
 * Firmware updating
+
+## Building From Source
+
+This project was built with Visual Studio 2019 Community Edition. You will also need to download my utility library, bp2008/BPUtil, and repair the dependency in the ErrorTrackerServer project. BPUtil is updated separately and may sometimes be slightly incompatible.
