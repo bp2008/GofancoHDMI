@@ -28,7 +28,7 @@ The official "Matrix Manager" application can do most of these things via IP, if
 
 ## Installation
 
-Download from [the releases tab](https://github.com/bp2008/GofancoHDMI/releases) and extract to a directory of your choosing.  Run the exe.  Click "Update Settings File" and edit the `httpPort` and `matrixHost` settings to suit your needs.  Then click "Install Service".  The service will then start automatically with Windows, but you can click "Start Service" to get it running now.  Finally, open `http://127.0.0.1:80/` in your web browser, replacing the port number if necessary.
+Download from [the releases tab](https://github.com/bp2008/GofancoHDMI/releases) and extract to a directory of your choosing.  Run the exe.  Click "Update Settings File".  The settings file will open if you have a file association for `.cfg` files, otherwise click "Open Data Folder" and open `Settings.cfg` in your favorite text editor.  Edit the `httpPort` and `matrixHost` settings to suit your needs.  Then click "Install Service".  The service will then start automatically with Windows, but you can click "Start Service" to get it running now.  Finally, open `http://127.0.0.1:80/` in your web browser, replacing the port number if necessary.
 
 ## Building From Source
 
