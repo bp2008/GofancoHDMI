@@ -26,6 +26,10 @@ The official "Matrix Manager" application can do most of these things via IP, if
 * Reading software/firmware versions
 * Firmware updating
 
+## Installation
+
+Download from [the releases tab](https://github.com/bp2008/GofancoHDMI/releases) and extract to a directory of your choosing.  Run the exe.  Click "Update Settings File" and edit the `httpPort` and `matrixHost` settings to suit your needs.  Then click "Install Service".  The service will then start automatically with Windows, but you can click "Start Service" to get it running now.  Finally, open `http://127.0.0.1:80/` in your web browser, replacing the port number if necessary.
+
 ## Building From Source
 
 This project was built with Visual Studio 2019 Community Edition. You will also need to download my utility library, bp2008/BPUtil, and repair the dependency in the ErrorTrackerServer project. BPUtil is updated separately and may sometimes be slightly incompatible.
