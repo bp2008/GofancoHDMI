@@ -3,7 +3,7 @@ A simple Windows Service with an embedded web server that assists in controlling
 
 ![PRO-Matrix44-SC](https://i.imgur.com/c8fEyQs.jpg)
 
-![versions](https://i.imgur.com/TNR975W.png)
+![Software and firmware versions](https://i.imgur.com/x9TJ1nQ.png)
 
 ## Purpose
 
@@ -13,6 +13,7 @@ The [Gofanco PRO-Matrix44-SC](http://amzn.com/B07P765D45) has a rudimentary web 
 
 * Read the device configuration, including power state, input/output status, input names, output names, and mapping names (a "mapping" is basically a preset that remembers the state of all inputs and outputs).
 * Change the input assigned to each output.
+* Save and load mappings.
 * Set the names of inputs, outputs, and mappings.
 
 ## Features Not Implemented
