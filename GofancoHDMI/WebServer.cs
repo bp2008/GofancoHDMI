@@ -41,6 +41,18 @@ namespace GofancoHDMI
 				SetOutput(p, "4");
 				p.writeSuccess();
 			}
+			else if (pageLower == "poweron")
+			{
+				POSTString("application/x-www-form-urlencoded",
+					"poweron");
+				p.writeSuccess();
+			}
+			else if (pageLower == "poweroff")
+			{
+				POSTString("application/x-www-form-urlencoded",
+					"poweroff");
+				p.writeSuccess();
+			}
 			else if (pageLower == "savemap")
 			{
 				int map = p.GetIntParam("map", -1);
@@ -114,6 +126,9 @@ namespace GofancoHDMI
 				p.outputStream.WriteLine("<ul>");
 
 				OutputListItemLink(p, "read", "Returns current configuration in JSON format.");
+
+				OutputListItemLink(p, "poweron", "Turns on the device.");
+				OutputListItemLink(p, "poweroff", "Turns off the device.");
 
 				OutputListItemLink(p, "setoutput?1=0", "Turns off output 1.");
 				OutputListItemLink(p, "setoutput?1=3", "Sets output 1 to input 3.");
