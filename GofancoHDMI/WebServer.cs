@@ -13,7 +13,7 @@ namespace GofancoHDMI
 	{
 		string matrixHost;
 		int matrixPort;
-
+		bool powerToggle = false;
 		public WebServer(int httpPort, string matrixHost, int matrixPort) : base(httpPort)
 		{
 			// NOTE: The Gofanco HDMI matrix doesn't actually speak HTTP properly. It likely has numerous vulnerabilities and little effort is made by this application to isolate the HDMI matrix from malicious input.
@@ -43,14 +43,19 @@ namespace GofancoHDMI
 			}
 			else if (pageLower == "poweron")
 			{
-				POSTString("application/x-www-form-urlencoded",
-					"poweron");
+				POSTString("application/x-www-form-urlencoded", "poweron");
 				p.writeSuccess();
 			}
 			else if (pageLower == "poweroff")
 			{
-				POSTString("application/x-www-form-urlencoded",
-					"poweroff");
+				POSTString("application/x-www-form-urlencoded", "poweroff");
+				p.writeSuccess();
+			}
+			else if (pageLower == "powertoggle")
+			{
+				MatrixStatus m = new MatrixStatus();
+				m.status = ReadStatus();
+				POSTString("application/x-www-form-urlencoded", m.status.powstatus == 0 ? "poweron" : "poweroff");
 				p.writeSuccess();
 			}
 			else if (pageLower == "savemap")
@@ -58,8 +63,7 @@ namespace GofancoHDMI
 				int map = p.GetIntParam("map", -1);
 				if (map >= 1 || map <= 8)
 				{
-					POSTString("application/x-www-form-urlencoded",
-						"save=" + map);
+					POSTString("application/x-www-form-urlencoded", "save=" + map);
 				}
 				p.writeSuccess();
 			}
@@ -68,8 +72,7 @@ namespace GofancoHDMI
 				int map = p.GetIntParam("map", -1);
 				if (map >= 1 || map <= 8)
 				{
-					POSTString("application/x-www-form-urlencoded",
-						"call=" + map);
+					POSTString("application/x-www-form-urlencoded", "call=" + map);
 				}
 				p.writeSuccess();
 			}
@@ -129,6 +132,7 @@ namespace GofancoHDMI
 
 				OutputListItemLink(p, "poweron", "Turns on the device.");
 				OutputListItemLink(p, "poweroff", "Turns off the device.");
+				OutputListItemLink(p, "powertoggle", "Turns device on if it was off, or off if it was on.");
 
 				OutputListItemLink(p, "setoutput?1=0", "Turns off output 1.");
 				OutputListItemLink(p, "setoutput?1=3", "Sets output 1 to input 3.");
