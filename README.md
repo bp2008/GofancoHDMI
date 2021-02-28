@@ -15,16 +15,17 @@ The [Gofanco PRO-Matrix44-SC](http://amzn.com/B07P765D45) has a rudimentary web 
 * Change the input assigned to each output.
 * Save and load mappings.
 * Set the names of inputs, outputs, and mappings.
+* Turn the device on or off, or toggle the power state with one basic command.
 
 ## Features Not Implemented
 
-The official "Matrix Manager" application can do most of these things via IP, if you don't have a serial connection available.  The default IP for one of these devices is `192.168.1.70`.
+The official "Matrix Manager" application from Gofanco supports additional features not implemented in this program.  Note: The default IP for one of these devices is `192.168.1.70`.
 
 * EDID control
 * Network settings
 * Cloud settings
 * Reading software/firmware versions
-* Firmware updating
+* Firmware updating (requires serial cable)
 
 ## Installation
 
