@@ -25,7 +25,7 @@ namespace GofancoHDMI
 
 		protected override void OnStart(string[] args)
 		{
-			server = new WebServer(settings.httpPort, "192.168.0.71", 80);
+			server = new WebServer(settings.httpPort, settings.matrixHost, settings.matrixHttpPort);
 			server.Start();
 		}
 
